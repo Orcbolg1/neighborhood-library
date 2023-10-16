@@ -67,5 +67,7 @@ public class Book {
         this.checkedOutTo = checkedOutTo;
     }
 
-    public 
+    public static void isCheckOut (){
+
+    }
 }
