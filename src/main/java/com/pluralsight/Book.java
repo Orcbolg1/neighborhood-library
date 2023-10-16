@@ -51,7 +51,7 @@ public class Book {
         this.title = title;
     }
 
-    public boolean isCheckedOut() {
+    public boolean getIsCheckedOut() {
         return isCheckedOut;
     }
 
@@ -67,7 +67,36 @@ public class Book {
         this.checkedOutTo = checkedOutTo;
     }
 
-    public static void isCheckOut (){
+    // Methods
+    // If the book is checked out method
+    public void checkOut(String checkedOutTo) {
+        if (isCheckedOut) {
+            System.out.println("This book is already checked out.");
+        } else {
+            System.out.println("This books is checked out to: " + checkedOutTo);
+            this.checkedOutTo = checkedOutTo;
+            isCheckedOut = true;
+        }
+    }
+        // If the book is Available method
+    public void checkIn() {
+        if (!isCheckedOut) {
+                System.out.println("This Book is Available.");
+        } else {
+                System.out.println();
+                checkedOutTo = " ";
+                isCheckedOut = false;
+            }
+        }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", isCheckedOut=" + isCheckedOut +
+                ", checkedOutTo='" + checkedOutTo + '\'' +
+                '}';
     }
 }
